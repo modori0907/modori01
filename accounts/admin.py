@@ -37,6 +37,13 @@ class StudentAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'name', 'age', 'score', 'school')  # 一覧画面で表示する内容を変更する
     #  idのリンクから他の項目をリンクにする方法
-    list_display_links = ('name',)
+    list_display_links = ('id',)
+    # 検索する画面を作成
+    search_fields = ('name', 'age',)  # ageを追加すると検索画面でageでも検索できるようになる
+    # フィルター機能の追加
+    list_filter = ('name', 'age', 'score', 'school')
+    # 編集機能の追加
+    list_editable = ('name', 'age', 'score', 'school')
+
 
 
